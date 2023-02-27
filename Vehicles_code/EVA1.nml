@@ -1,0 +1,95 @@
+// --------------------------------------------------------------------------------EVA1
+
+spriteset(ss_EVA1_purchase, "src/METRO/EVA1_cc_8bpp.png")		{tmpl_purchase()}  //Motorkocsi
+spriteset(ss_EVA1_cc, "src/METRO/EVA1_cc_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA1_cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA1_cc_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA1_cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA1_cc_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_EVA1_bkv, "src/METRO/EVA1_bkv_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA1_bkv, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA1_bkv_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA1_bkv, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA1_bkv_4x_8bpp.png") {tmpl_1(4)}
+
+switch (FEAT_TRAINS, SELF, sw_EVA1_cc, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA1_cc;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_bkv, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA1_bkv;
+}
+
+switch (FEAT_TRAINS, SELF, sw1_EVA1_ss, cargo_subtype) {
+	0: sw_EVA1_cc;
+	1: sw_EVA1_bkv;
+	CB_RESULT_NO_TEXT;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_articulated, extra_callback_info1) {
+    0: item_EVA1;
+    1: item_EVA1;
+    2: item_EVA1;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_length, position_in_articulated_veh) {
+	1: return 2;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_capacity, position_in_articulated_veh) {
+	1: return 2;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_CC);
+	1: return string(STR_COLOUR_SCHEME_BUDAPEST);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_TRAINS, item_EVA1) {
+	property {
+        name:								string(STR_EVA1_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1967,11,1);
+		track_type:                   		ELRL;
+        model_life:						20;
+        vehicle_life:						50;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					26;
+        sprite_id:							SPRITE_ID_NEW_TRAIN;
+        speed:								80 km/h;
+        misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ELECTRIC;
+        power:								264 kW;
+        weight:							34 ton;
+        cargo_capacity:					76;
+		cargo_age_period:					30;
+        visual_effect_and_powered :		VISUAL_EFFECT_ELECTRIC;
+		dual_headed:          	        0;
+        engine_class:                		ENGINE_CLASS_ELECTRIC;
+        tractive_effort_coefficient:	0.349;
+        air_drag_coefficient:			0.035;
+//		variant_group:					item_EV1;
+    }
+    graphics {
+		default:                 		sw1_EVA1_ss;
+		purchase:						ss_EVA1_purchase;
+		articulated_part:        		sw_EVA1_articulated;
+		length:                  		sw_EVA1_length;
+		cargo_subtype_text: 			sw_EVA1_livery_text;
+		cost_factor:					70 * parapuco;
+		running_cost_factor:			70 * pararuco;
+		cargo_capacity:				sw_EVA1_capacity;
+		purchase_cargo_capacity :	sw_EVA1_capacity;
+		additional_text: 				string(STR_EVA1_ADAT);
+    }
+}
+
+
+// --------------------------------------------------------------------------------EVA1 End
+// --
+// --

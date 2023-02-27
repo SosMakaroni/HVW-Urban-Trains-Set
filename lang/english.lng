@@ -1,0 +1,44 @@
+﻿##grflangid 0x01
+# This is the English language file
+
+# GRF name and description definitions	
+STR_GRF_NAME	:HVW Urban Train Set
+STR_GRF_DESC	:{}{LTBLUE}Urban Train Set{}{BLACK}Last update:{WHITE} 2023.02.26 {}{BLACK}Code:{GREEN}SosMakaroni{}{BLACK}Models:{GREEN}Flogeza{} {COPYRIGHT}2023 SosMakaroni & Flogeza{}{GRAY}License: GPLv2{}{BLACK}Tram Set.
+
+STR_BUG	:HVW Toyland bug, sorry :(
+
+STR_PARAM_BUY_NAME	:Purchase cost
+STR_PARAM_BUY_DESC	:For players who want to choose the purchase cost.
+STR_PARAM_MAINTENANCE_NAME	:Maintenance costs
+STR_PARAM_MAINTENANCE_DESC	:For players who want to choose the cost of maintenance.
+STR_PARAM_GAME_VERY_EASY	:/4
+STR_PARAM_GAME_EASY	:/2
+STR_PARAM_GAME_NORMAL	:1 {SILVER} By default{BLACK}
+STR_PARAM_GAME_HARD	:x2
+STR_PARAM_GAME_VERY_HARD	:x4
+
+STR_EVA1_NAME	:Ev_a
+STR_EVA1_ADAT	:{GOLD}----------{}The{BLACK} Ev_a {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
+STR_EVA2_NAME	:Ev_a
+STR_EVA2_ADAT	:{GOLD}----------{}The{BLACK} Ev_a {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
+
+
+STR_COLOUR_SCHEME_CC	: - 2 Company color Scheme
+STR_COLOUR_SCHEME_BUDAPEST	: - Budapest Scheme
+STR_COLOUR_SCHEME_BUDAPEST2	: - Budapest Newer Scheme
+STR_COLOUR_SCHEME_SZEGED	: - Szeged Scheme
+STR_COLOUR_SCHEME_DEBRECEN	: - Debrecen Scheme
+STR_COLOUR_SCHEME_CHEMNITZ	: - Chemnitz Scheme
+STR_COLOUR_SCHEME_KARLSRUHE	: - Karlsruhe Scheme
+STR_COLOUR_SCHEME_PROTO	: - Prototype Scheme
+STR_COLOUR_SCHEME_PEPSI	: - Pepsi advertising Scheme
+STR_COLOUR_SCHEME_COCA	: - CocaCola advertising Scheme
+
+STR_CargoProba1__type_name	: Próba1
+STR_CargoProba1__unit_name	: Próba2
+STR_CargoProba1__units_of_cargo	:{COMMA} egység
+STR_CargoProba1__items_of_cargo	:{COMMA} egység Próba
+STR_CargoProba1__abbreviation	:{TINYFONT} P5
+
+STR_TESZT1_NAME	:Teszt gépezet
+STR_TESZT1_ADAT	:{GOLD}-Randomshit-{}

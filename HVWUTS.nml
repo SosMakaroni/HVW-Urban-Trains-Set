@@ -1,0 +1,362 @@
+grf {
+	grfid: "HS\16\30";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 10;
+	min_compatible_version: 5722;
+	param 0 {
+        param_cost_factor {
+            type: int;
+            name: string(STR_PARAM_BUY_NAME);
+            desc: string(STR_PARAM_BUY_DESC);
+            min_value: 0;
+            max_value: 4;
+            def_value: 2;
+            names: {
+					0: string(STR_PARAM_GAME_VERY_EASY);
+                    1: string(STR_PARAM_GAME_EASY);
+					2: string(STR_PARAM_GAME_NORMAL);
+					3: string(STR_PARAM_GAME_HARD);
+					4: string(STR_PARAM_GAME_VERY_HARD);
+                    };
+				}
+			}
+	param 1 {
+		param_running_cost_factor {
+            type: int;
+            name: string(STR_PARAM_MAINTENANCE_NAME);
+            desc: string(STR_PARAM_MAINTENANCE_DESC);
+            min_value: 0;
+            max_value: 4;
+            def_value: 2;
+            names: {
+					0: string(STR_PARAM_GAME_VERY_EASY);
+                    1: string(STR_PARAM_GAME_EASY);
+					2: string(STR_PARAM_GAME_NORMAL);
+					3: string(STR_PARAM_GAME_HARD);
+					4: string(STR_PARAM_GAME_VERY_HARD);
+                    };
+				}
+			}
+
+}
+
+parapuco = (param_cost_factor == 1) ? 2 : (param_cost_factor == 2) ? 4 : (param_cost_factor == 3) ? 8 : (param_cost_factor == 4) ? 16 : 1;
+pararuco = (param_running_cost_factor == 1) ? 2 : (param_running_cost_factor == 2) ? 4 : (param_running_cost_factor == 3) ? 8 : (param_running_cost_factor == 4) ? 16 : 1;
+
+railtypetable {
+//SIMA
+	RAIL, RLOW, RMED, RHIG, 
+//FELSOVEZETEK
+	ELRL, /*3RDC,*/ ELOW, CLOW, EMED, CMED, EHIG, HSTR, 
+//HARMADIK SIN + 3RDC, CLOW, CMED, 
+	/*3RDR, 3LOW, 3MED,*/ MTRO, MTRC, MTRS, MTRU, MTRT     
+}
+
+
+cargotable {
+//PASSENGERS CLASS
+PASS, TOUR, 
+//MAIL CLASS
+MAIL,
+//EXPRESS CLASS
+GOOD,
+//ARMOURED CLASS
+VALU, GOLD, DIAM, 
+//BULK CLASS
+COAL, GRAI,  IORE, WHEA, MAIZ, CORE, SUGR, AORE, BEAN, GRVL, LIME, SAND, SCMT, 
+//PIECE GOODS CLASS
+LVST, WOOD, STEL, PAPR,  COPR, METL, 
+//LIQUID CLASS
+OIL_, RUBR, WATR, PETR, RFPR, 
+//EXPRESS + REFRIGERATED CLASS
+FOOD, FISH, MEAT, 
+//BULK + REFRIGERATED CLASS
+FRUT, 
+//BULK + COVERED CLASS
+CLAY, CMNT, OLSD, 
+//BULK + PIECE CLASS
+FERT, FICR, WDPR, RCYC, 
+//HAZARDOUS CLASS
+
+//PIECE GOODS + COVERED CLASS
+BDMT, WOOL, TEXT, 
+//OVERSIZED CLASS
+
+//PIECE + OVERSIZED CLASS
+GLAS, VEHI, 
+//POWDERIZED CLASS (COVER)
+
+//EXPRESS + LIQUID + REFRIGERATED
+MILK, 
+//EXPRESS + PIECE + LOQUID CLASS
+BEER, 
+//EXPRESS + PIECE CLASS
+BOOM, ENSP, FMSP, JAVA, VPTS, VENG, VBOD,
+}
+
+template tmpl_purchase() {
+	[0,	0,	99,	25,	-25,-15]}
+	
+template tmpl_1(z1){
+	[0		*z1,	0,	11	*z1,	49	*z1,	-5	*z1,	-13	*z1,	ANIM]
+	[19		*z1,	0,	54	*z1,	40	*z1,	-45	*z1,	-12	*z1,	ANIM]
+	[81		*z1,	0,	69	*z1,	15	*z1,	-54	*z1,	-10	*z1,	ANIM]
+	[158	*z1,	0,	54	*z1,	40	*z1,	-41	*z1,	-29	*z1,	ANIM]
+	[220	*z1,	0,	11	*z1,	49	*z1,	-6	*z1,	-32	*z1,	ANIM]
+	[239	*z1,	0,	54	*z1,	40	*z1,	-15	*z1,	-28	*z1,	ANIM]
+	[301	*z1,	0,	69	*z1,	15	*z1,	-11	*z1,	-9	*z1,	ANIM]
+	[378	*z1,	0,	54	*z1,	40	*z1,	-8	*z1,	-14	*z1,	ANIM]}
+
+template tmpl_toldat() {
+	[0,	0,	2,	2,	1,	1]}	
+
+spriteset(ss_toldat, "src/icons.png")		{tmpl_toldat()}
+
+//Wood logo, replaces ł 0x0142
+font_glyph (NORMAL, 0x0142, "src/icons.png") {[20,80,24,10,0,0]}
+font_glyph (SMALL, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Trailer logo, replaces Ł 0x0141
+font_glyph (NORMAL, 0x0141, "src/icons.png") {[60,80,29,10,0,0]}
+font_glyph (SMALL, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Double logo, replaces đ 0x0111
+font_glyph (NORMAL, 0x0111, "src/icons.png") {[110,80,29,10,0,0]}
+font_glyph (SMALL, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Triple logo, replaces Đ 0x0110
+font_glyph (NORMAL, 0x0110, "src/icons.png") {[160,80,25,10,0,0]}
+font_glyph (SMALL, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Twin logo, replaces Ń 0x0143
+font_glyph (NORMAL, 0x0143, "src/icons.png") {[20,110,21,10,0,0]}
+font_glyph (SMALL, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+// --------------------------------------------------------------------------------EVA1
+
+spriteset(ss_EVA1_purchase, "src/METRO/EVA1_cc_8bpp.png")		{tmpl_purchase()}  //Motorkocsi
+spriteset(ss_EVA1_cc, "src/METRO/EVA1_cc_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA1_cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA1_cc_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA1_cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA1_cc_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_EVA1_bkv, "src/METRO/EVA1_bkv_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA1_bkv, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA1_bkv_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA1_bkv, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA1_bkv_4x_8bpp.png") {tmpl_1(4)}
+
+switch (FEAT_TRAINS, SELF, sw_EVA1_cc, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA1_cc;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_bkv, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA1_bkv;
+}
+
+switch (FEAT_TRAINS, SELF, sw1_EVA1_ss, cargo_subtype) {
+	0: sw_EVA1_cc;
+	1: sw_EVA1_bkv;
+	CB_RESULT_NO_TEXT;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_articulated, extra_callback_info1) {
+    0: item_EVA1;
+    1: item_EVA1;
+    2: item_EVA1;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_length, position_in_articulated_veh) {
+	1: return 2;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_capacity, position_in_articulated_veh) {
+	1: return 2;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA1_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_CC);
+	1: return string(STR_COLOUR_SCHEME_BUDAPEST);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_TRAINS, item_EVA1) {
+	property {
+        name:								string(STR_EVA1_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1967,11,1);
+		track_type:                   		ELRL;
+        model_life:						20;
+        vehicle_life:						50;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					26;
+        sprite_id:							SPRITE_ID_NEW_TRAIN;
+        speed:								80 km/h;
+        misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ELECTRIC;
+        power:								264 kW;
+        weight:							34 ton;
+        cargo_capacity:					76;
+		cargo_age_period:					30;
+        visual_effect_and_powered :		VISUAL_EFFECT_ELECTRIC;
+		dual_headed:          	        0;
+        engine_class:                		ENGINE_CLASS_ELECTRIC;
+        tractive_effort_coefficient:	0.349;
+        air_drag_coefficient:			0.035;
+//		variant_group:					item_EV1;
+    }
+    graphics {
+		default:                 		sw1_EVA1_ss;
+		purchase:						ss_EVA1_purchase;
+		articulated_part:        		sw_EVA1_articulated;
+		length:                  		sw_EVA1_length;
+		cargo_subtype_text: 			sw_EVA1_livery_text;
+		cost_factor:					70 * parapuco;
+		running_cost_factor:			70 * pararuco;
+		cargo_capacity:				sw_EVA1_capacity;
+		purchase_cargo_capacity :	sw_EVA1_capacity;
+		additional_text: 				string(STR_EVA1_ADAT);
+    }
+}
+
+
+// --------------------------------------------------------------------------------EVA1 End
+// --
+// --
+// --------------------------------------------------------------------------------EVA2
+
+spriteset(ss_EVA2_purchase, "src/METRO/EVA2_cc_8bpp.png")		{tmpl_purchase()}  //Motorkocsi
+spriteset(ss_EVA2_cc, "src/METRO/EVA2_cc_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA2_cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA2_cc_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA2_cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA2_cc_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_EVA2_bkv, "src/METRO/EVA2_bkv_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA2_bkv, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA2_bkv_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA2_bkv, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA2_bkv_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_EVA3_cc, "src/METRO/EVA3_cc_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA3_cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA3_cc_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA3_cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA3_cc_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_EVA3_bkv, "src/METRO/EVA3_bkv_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_EVA3_bkv, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVA3_bkv_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_EVA3_bkv, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVA3_bkv_4x_8bpp.png") {tmpl_1(4)}
+
+switch (FEAT_TRAINS, SELF, sw_EVA2_cc, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA2_cc;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA2_bkv, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA2_bkv;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA3_cc, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA3_cc;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA3_bkv, position_in_articulated_veh ) {
+	1: ss_toldat;
+	2: ss_toldat;
+    ss_EVA3_bkv;
+}
+switch (FEAT_TRAINS, SELF, swp_EVA2_cc, position_in_consist_from_end) {
+	2: sw_EVA3_cc;
+	sw_EVA2_cc;
+}
+switch (FEAT_TRAINS, SELF, swp_EVA2_bkv, position_in_consist_from_end) {
+	2: sw_EVA3_bkv;
+	sw_EVA2_bkv;
+}
+
+switch (FEAT_TRAINS, SELF, sw1_EVA2_ss, cargo_subtype) {
+	0: swp_EVA2_cc;
+	1: swp_EVA2_bkv;
+	CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_TRAINS, SELF, sw_EVA2_articulated, extra_callback_info1) {
+    0: item_EVA2;
+    1: item_EVA2;
+    2: item_EVA2;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA2_length, position_in_articulated_veh) {
+	1: return 2;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA2_capacity, position_in_articulated_veh) {
+	1: return 2;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_TRAINS, SELF, sw_EVA2_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_CC);
+	1: return string(STR_COLOUR_SCHEME_BUDAPEST);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_TRAINS, item_EVA2) {
+	property {
+        name:								string(STR_EVA2_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1967,11,1);
+		track_type:                   		ELRL;
+        model_life:						20;
+        vehicle_life:						50;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					26;
+        sprite_id:							SPRITE_ID_NEW_TRAIN;
+        speed:								80 km/h;
+        misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ELECTRIC;
+		extra_power_per_wagon:			264 kW;
+        weight:							34 ton;
+        cargo_capacity:					76;
+		cargo_age_period:					30;
+        visual_effect_and_powered :		VISUAL_EFFECT_ELECTRIC;
+		dual_headed:          	        0;
+//     engine_class:                	ENGINE_CLASS_ELECTRIC;
+//     tractive_effort_coefficient:	0.349;
+//     air_drag_coefficient:			0.035;
+//		variant_group:					item_EV1;
+    }
+    graphics {
+		default:                 		sw1_EVA2_ss;
+		purchase:						ss_EVA2_purchase;
+		articulated_part:        		sw_EVA2_articulated;
+		length:                  		sw_EVA2_length;
+		cargo_subtype_text: 			sw_EVA2_livery_text;
+		cost_factor:					70 * parapuco;
+		running_cost_factor:			70 * pararuco;
+		cargo_capacity:				sw_EVA2_capacity;
+		purchase_cargo_capacity :	sw_EVA2_capacity;
+		additional_text: 				string(STR_EVA2_ADAT);
+    }
+}
+
+
+// --------------------------------------------------------------------------------EVA2 End
+// --
+// --
+sort(FEAT_TRAINS, [
+	item_EVA1
+	]);
