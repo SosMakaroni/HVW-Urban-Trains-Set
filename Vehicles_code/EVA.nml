@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------EVA
 
-spriteset(ss_EVA_purchase, "src/METRO/EVA_cc_8bpp.png")		{tmpl_purchase()}  //Vásárlási nézet
+spriteset(ss_EVA_purchase, "src/METRO/EVA_buy_8bpp.png")		{tmpl_purchase()}  //Vásárlási nézet
 spriteset(ss_EVAa_cc, "src/METRO/EVAa_cc_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_EVAa_cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/METRO/EVAa_cc_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_EVAa_cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/METRO/EVAa_cc_4x_8bpp.png") {tmpl_1(4)}
@@ -131,7 +131,7 @@ item(FEAT_TRAINS, item_EVA) {
         engine_class:                		ENGINE_CLASS_ELECTRIC;
         tractive_effort_coefficient:	0.349;
         air_drag_coefficient:			0.035;
-//		variant_group:					item_EV1;
+		variant_group:					item_METR;
     }
     graphics {
 		default:                 		sw_EVA;

@@ -17,10 +17,15 @@ STR_PARAM_GAME_NORMAL	:1 {SILVER} By default{BLACK}
 STR_PARAM_GAME_HARD	:x2
 STR_PARAM_GAME_VERY_HARD	:x4
 
-STR_EVA_NAME	:EvA - Metrovagonmas
+STR_METR_NAME	:Metrovagonmas metros
+STR_METR_ADAT	:{GOLD}----------{}This metros built by Metrovagonmas in Russia.{BLACK}{}
+
+STR_EV_NAME	:Ev
+STR_EV_ADAT	:{GOLD}----------{}The{BLACK} Ev {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
+STR_EV3_NAME	:Ev3
+STR_EV3_ADAT	:{GOLD}----------{}The{BLACK} Ev3 {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
+STR_EVA_NAME	:EvA
 STR_EVA_ADAT	:{GOLD}----------{}The{BLACK} EvA {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
-STR_EVA1b_NAME	:EvA - Metrovagonmas
-STR_EVA1b_ADAT	:{GOLD}----------{}The{BLACK} EvA {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
 
 
 STR_COLOUR_SCHEME_CC	: - 2 Company color Scheme
@@ -43,5 +48,9 @@ STR_CargoProba1__abbreviation	:{TINYFONT} P5
 STR_TESZT1_NAME	:Teszt gépezet
 STR_TESZT1_ADAT	:{GOLD}-Randomshit-{}
 
+STR_EV_CANNOT_START:... train only start with pair of wagon (2-4-6 wagon) or max. 8 wagon.
+STR_EV_CANNOT_ATTACH_OTHER:... only EV controlcar can be attached to EV controlcar.
+STR_EV3_CANNOT_START:... train only start with pair of wagon (2-4-8 wagon) or max. 8 wagon.
+STR_EV3_CANNOT_ATTACH_OTHER:... only EV3 controlcar can be attached to EV3 controlcar.
 STR_EVA_CANNOT_START:... train too short (min. 1 wagon).
 STR_EVA_CANNOT_ATTACH_OTHER:... only EVA wagon can be attached to EVA controlcar.
