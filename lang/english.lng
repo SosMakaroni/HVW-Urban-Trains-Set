@@ -17,10 +17,10 @@ STR_PARAM_GAME_NORMAL	:1 {SILVER} By default{BLACK}
 STR_PARAM_GAME_HARD	:x2
 STR_PARAM_GAME_VERY_HARD	:x4
 
-STR_EVA1_NAME	:Ev_a
-STR_EVA1_ADAT	:{GOLD}----------{}The{BLACK} Ev_a {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
-STR_EVA2_NAME	:Ev_a
-STR_EVA2_ADAT	:{GOLD}----------{}The{BLACK} Ev_a {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
+STR_EVA_NAME	:EvA - Metrovagonmas
+STR_EVA_ADAT	:{GOLD}----------{}The{BLACK} EvA {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
+STR_EVA1b_NAME	:EvA - Metrovagonmas
+STR_EVA1b_ADAT	:{GOLD}----------{}The{BLACK} EvA {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
 
 
 STR_COLOUR_SCHEME_CC	: - 2 Company color Scheme
@@ -42,3 +42,6 @@ STR_CargoProba1__abbreviation	:{TINYFONT} P5
 
 STR_TESZT1_NAME	:Teszt gépezet
 STR_TESZT1_ADAT	:{GOLD}-Randomshit-{}
+
+STR_EVA_CANNOT_START:... train too short (min. 1 wagon).
+STR_EVA_CANNOT_ATTACH_OTHER:... only EVA wagon can be attached to EVA controlcar.

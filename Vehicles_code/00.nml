@@ -95,6 +95,9 @@ BEER,
 BOOM, ENSP, FMSP, JAVA, VPTS, VENG, VBOD,
 }
 
+traininfo_y_offset = 0;
+train_width_32_px = 0;
+
 template tmpl_purchase() {
 	[0,	0,	99,	25,	-25,-15]}
 	
