@@ -2,5 +2,8 @@ sort(FEAT_TRAINS, [
 	item_METR,
 	item_EV,
 	item_EV3,
-	item_EVA
+	item_817,
+	item_EVA,
+	item_G2,
+	item_CL
 	]);
