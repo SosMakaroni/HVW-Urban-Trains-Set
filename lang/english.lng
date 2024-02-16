@@ -3,7 +3,7 @@
 
 # GRF name and description definitions	
 STR_GRF_NAME	:HVW Urban Train Set
-STR_GRF_DESC	:{}{LTBLUE}Urban Train Set{}{BLACK}Last update:{WHITE} 2023.02.26 {}{BLACK}Code:{GREEN}SosMakaroni{}{BLACK}Models:{GREEN}Flogeza{} {COPYRIGHT}2023 SosMakaroni & Flogeza{}{GRAY}License: GPLv2{}{BLACK}Tram Set.
+STR_GRF_DESC	:{}{LTBLUE}Urban Train Set{}{BLACK}Last update:{WHITE} 2023.02.26 {}{BLACK}Code:{GREEN}SosMakaroni{}{BLACK}Models:{GREEN}Flogeza{} {COPYRIGHT}2023 SosMakaroni & Flogeza{}{GRAY}License: GPLv2{}{BLACK}Ver.2 2023.12.17.
 
 STR_BUG	:HVW Toyland bug, sorry :(
 
@@ -30,6 +30,8 @@ STR_817_NAME	:81-717
 STR_817_ADAT	:{GOLD}----------{}The{BLACK} 81-717 {GOLD}is a metro built by Metrovagonmas in Russia, between ... and ..., ... vehicles were supplied to Budapest.{BLACK}{}
 STR_G2_NAME	:G2
 STR_G2_ADAT	:{GOLD}----------{}The{BLACK} G2 {GOLD}is a metro built by Ganz in Hungary, 1983, it's a prototype vehicles were supplied to Budapest.{BLACK}{}
+STR_MP_NAME	:Metropolis
+STR_MP_ADAT	:{GOLD}----------{}The{BLACK} Metropolis {GOLD} is a family of electric multiple units designed and produced by the French rolling stock manufacturer Alstom.{BLACK}{}
 STR_CL_NAME	:Citylink
 STR_CL_ADAT	:{GOLD}----------{}The Stadler {BLACK}CITYLINK {GOLD}is a clever design of tram which can be configured as an urban tram or as an inter-city train.{}The barrier-free {BLACK}CITYLINK{GOLD} type tram has a low-floor design throughout.{BLACK}{}
 
@@ -60,4 +62,6 @@ STR_817_CANNOT_START:... train too short (min. 1 wagon).
 STR_817_CANNOT_ATTACH_OTHER:... only 81-717/81-714 wagon can be attached to 81-717 controlcar.
 STR_G2_CANNOT_START:... train too short (min. 1 wagon).
 STR_G2_CANNOT_ATTACH_OTHER:... only G2 wagon can be attached to G2 controlcar.
+STR_MP_CANNOT_START:... train too short (min. 1 wagon).
+STR_MP_CANNOT_ATTACH_OTHER:... only G2 wagon can be attached to G2 controlcar.
 STR_CL_CANNOT_ATTACH_OTHER:... only Citylink can be attached to Citylink.
